@@ -1,0 +1,241 @@
+/* LinkedIn Connection Finder - Styles */
+#linkedin-connection-banner {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  animation: slideInRight 0.4s ease;
+  overflow: hidden;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(450px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  position: relative;
+}
+
+.connection-banner.loading .banner-content {
+  background: linear-gradient(135deg, #0077b5 0%, #005885 100%);
+  color: white;
+}
+
+.connection-banner.has-connections .banner-content {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  color: white;
+}
+
+.connection-banner.no-connections .banner-content {
+  background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
+  color: white;
+}
+
+.banner-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.connection-banner:not(.loading) .banner-icon {
+  animation: none;
+}
+
+.banner-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.banner-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.banner-subtitle {
+  font-size: 13px;
+  opacity: 0.95;
+  line-height: 1.3;
+}
+
+.banner-action {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.banner-action:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.banner-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+  line-height: 1;
+}
+
+.banner-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Connections List */
+.connections-list {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.connection-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s;
+}
+
+.connection-item:hover {
+  background: white;
+}
+
+.connection-item:last-child {
+  border-bottom: none;
+}
+
+.connection-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #e5e7eb;
+}
+
+.connection-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.connection-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.connection-title {
+  font-size: 12px;
+  color: #6b7280;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.connection-link {
+  padding: 6px 12px;
+  background: #0077b5;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.connection-link:hover {
+  background: #005885;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 119, 181, 0.3);
+}
+
+/* Scrollbar */
+.connections-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.connections-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.connections-list::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 4px;
+}
+
+.connections-list::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #linkedin-connection-banner {
+    width: calc(100% - 40px);
+    right: 20px;
+  }
+}
+
+/* Loading Animation */
+.connection-banner.loading .banner-icon {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Connection Finder</title>
+  <link rel="stylesheet" href="popup-styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤝 LinkedIn Connections</h1>
+    </header>
+
+    <div class="status-section">
+      <div class="status-card" id="linkedin-status">
+        <div class="status-icon">🔗</div>
+        <div class="status-info">
+          <div class="status-label">LinkedIn Status</div>
+          <div class="status-value" id="status-text">Checking...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="section">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <div class="step-title">Visit a Job Posting</div>
+              <div class="step-description">Browse jobs on LinkedIn, Indeed, Glassdoor, or other supported sites</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <div class="step-title">Automatic Detection</div>
+              <div class="step-description">The extension detects the company and searches your LinkedIn network</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <div class="step-title">View Connections</div>
+              <div class="step-description">See if you have any 1st-degree connections at that company</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <div class="step-title">Get Referrals</div>
+              <div class="step-description">Reach out to your connections for insights or referrals</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🎯 Tips for Success</h2>
+        <ul class="tips-list">
+          <li>
+            <strong>Make sure you're logged into LinkedIn</strong> in this browser
+          </li>
+          <li>
+            <strong>Keep your LinkedIn connections up to date</strong> for better results
+          </li>
+          <li>
+            <strong>When reaching out,</strong> be specific about the role and genuine about your interest
+          </li>
+          <li>
+            <strong>Ask for insights first,</strong> then gently inquire about referrals
+          </li>
+          <li>
+            <strong>Personalize your message</strong> to each connection
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>📝 Sample Introduction Message</h2>
+        <div class="message-template">
+          <p>Hi [Name],</p>
+          <p>I noticed you work at [Company] and I'm very interested in the [Job Title] position there.</p>
+          <p>I'd love to learn more about your experience at the company and get any insights you might have about the role and team culture.</p>
+          <p>Would you be open to a quick chat?</p>
+          <p>Best regards,<br>[Your Name]</p>
+        </div>
+        <button id="copy-template" class="btn-secondary">📋 Copy Template</button>
+      </div>
+
+      <div class="section">
+        <h2>⚙️ Settings</h2>
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="auto-search">
+            Automatically search for connections
+          </label>
+        </div>
+        <div class="setting-item">
+          <label>
+            <input type="checkbox" id="show-banner">
+            Show connection banner on job pages
+          </label>
+        </div>
+        <div class="setting-item">
+          <button id="clear-cache" class="btn-secondary">Clear Cache</button>
+        </div>
+      </div>
+
+      <div class="section important-note">
+        <h2>⚠️ Important Note</h2>
+        <p>This extension requires you to be logged into LinkedIn. It searches for 1st-degree connections at companies where you're viewing job postings.</p>
+        <p>For the best results, click the "Search Manually" button when prompted to view all connections at a company on LinkedIn.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Version 1.0.0 | <a href="#" id="help-link">Help & Support</a></p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
